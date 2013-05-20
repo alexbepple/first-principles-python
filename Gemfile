@@ -1,7 +1,8 @@
-source :rubygems
+source 'https://rubygems.org'
 
-group :development do
-  gem 'guard'
-  gem 'rb-fsevent', :require => false
-  gem 'guard-shell'
+gem 'guard'
+gem 'guard-shell'
+
+group :osx do
+  gem 'rb-fsevent'
 end
