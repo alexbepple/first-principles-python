@@ -2,10 +2,10 @@
 
 This is an example for teaching principles for good unit tests.
 
-This branch contain different stages of the example. _master_ is most likely not where you want to start.
+There are different stages of the example.
 
-* [_alpha_](https://github.com/alexbepple/first-principles-python/tree/alpha) contains examples of bad tests. They are not unit tests at all or just bad unit tests. `git checkout alpha` gets you there.
-* The tip of this branch contains suggestions for fixing some of the non-obvious ones. For the Templater example, I have included two possible solutions.
+* [_master_](https://github.com/alexbepple/first-principles-python/tree/alpha) contains examples of bad tests. They are not unit tests at all or just bad unit tests.
+* The branch [_beispielloesungen_](https://github.com/alexbepple/first-principles-python/tree/beispielloesungen) contains suggestions for fixing some of the non-obvious ones. For the Templater example, I have included two possible solutions.
 
 
 # Run tests
