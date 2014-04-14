@@ -1,12 +1,8 @@
-from nose.tools import *
 import re
 from hamcrest import *
 
-class StringCreator_Test:
-    @istest
-    def createsOnlyWhitespace(self):
-        assert_that(StringCreator().create(), contains_only_whitespace())
-
+def test_creates_only_whitespace():
+    assert_that(StringCreator().create(), contains_only_whitespace())
 
 
 from hamcrest.core.base_matcher import BaseMatcher

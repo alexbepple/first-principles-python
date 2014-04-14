@@ -1,33 +1,27 @@
-from nose.tools import *
+from pytest import fixture
 
-class Book_Test:
+def test_can_be_lent_by_default():
+    book = Book()
+    assert book.is_lendable()
 
-    @istest
-    def can_be_lent_by_default(self):
-        book = Book()
-        assert_true(book.islendable())
+@fixture
+def borrowed():
+    book = Book()
+    book.borrow()
+    return book
 
+def test_is_not_lendable(borrowed):
+    assert not borrowed.is_lendable()
 
-class BookOnceBorrowed_Test:
-
-    def setUp(self):
-        self.book = Book()
-        self.book.borrow()
-
-    @istest
-    def is_not_lendable(self):
-        assert_false(self.book.islendable())
-
-    @istest
-    def is_lendable_again_after_given_back(self):
-        self.book.give_back()
-        assert_true(self.book.islendable())
+def test_is_lendable_again_after_given_back(borrowed):
+    borrowed.give_back()
+    assert borrowed.is_lendable()
 
 
 class Book:
     def __init__(self):
         self.lendable = True
-    def islendable(self):
+    def is_lendable(self):
         return self.lendable
     def borrow(self):
         self.lendable = False
