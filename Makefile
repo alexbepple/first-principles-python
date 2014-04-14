@@ -1,5 +1,2 @@
-test.once:
-	nosetests --with-yanc test/unit
-
-test.continuously:
-	bundle exec guard start --clear --notify=false
+tdd:
+	watchmedo shell-command --patterns='*.py' --recursive --command='clear;py.test'

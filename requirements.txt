@@ -1,2 +1,6 @@
-nose
-yanc
+pytest==2.5.2
+
+watchdog==0.7.1
+argcomplete==0.8.0
+
+PyHamcrest==1.8.0

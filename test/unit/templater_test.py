@@ -1,12 +1,8 @@
-from nose.tools import *
-
-class Templater_Test:
-    @istest
-    def replaces_placeholders_with_actual_values(self):
-        templater = Templater()
-        templater.define('foo', 'foo {bar}')
-        rendered = templater.render('foo', {'bar': 'baz'})
-        eq_('foo baz', rendered)
+def test_replaces_placeholders_with_actual_values():
+    templater = Templater()
+    templater.define('foo', 'foo {bar}')
+    rendered = templater.render('foo', {'bar': 'baz'})
+    assert 'foo baz' == rendered
 
 
 class Templater:
@@ -15,7 +11,7 @@ class Templater:
 
     def define(self, name, contents):
         self.templates[name] = contents
-    
+
     def render(self, name, values):
         return self._supplant(self.templates[name], values)
 

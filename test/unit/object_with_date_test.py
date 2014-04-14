@@ -1,19 +1,16 @@
-from nose.tools import *
 from datetime import date
+import pytest
 
-class ObjectWithDate_Test:
-    def setUp(self):
-        self.object_with_date = ObjectWithDate()
+@pytest.fixture
+def object_with_date():
+    return ObjectWithDate()
 
-    @istest
-    def knows_when_it_was_created(self):
-        eq_(self.object_with_date.creation, date.today())
+def test_knows_when_it_was_created(object_with_date):
+    assert object_with_date.creation == date.today()
 
-    @istest
-    def knows_when_it_was_created2(self):
-        print self.object_with_date.creation
+def test_knows_when_it_was_created2(object_with_date):
+    print object_with_date.creation
 
 class ObjectWithDate:
     def __init__(self):
         self.creation = date.today()
-

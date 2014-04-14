@@ -1,11 +1,9 @@
-from nose.tools import *
-from nose.plugins.skip import SkipTest
+import pytest
+skip = pytest.mark.skipif
 
-class Roman_Test:
-    @istest
-    def converts639(self):
-        raise SkipTest
-        eq_(roman(639), "DCXXXIX")
+@skip
+def test_converts_639():
+    assert roman(639) == "DCXXXIX"
 
 def roman(arabic):
     pass

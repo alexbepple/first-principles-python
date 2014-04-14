@@ -1,14 +1,10 @@
-from nose.tools import *
-
-class Book_Test:
-    @istest
-    def can_be_lent_and_returned(self):
-        book = Book()
-        assert_true(book.islendable())
-        book.borrow()
-        assert_false(book.islendable())
-        book.give_back()
-        assert_true(book.islendable())
+def test_can_be_lent_and_returned():
+    book = Book()
+    assert book.islendable()
+    book.borrow()
+    assert not book.islendable()
+    book.give_back()
+    assert book.islendable()
 
 class Book:
     def __init__(self):

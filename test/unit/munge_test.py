@@ -1,25 +1,19 @@
-from nose.tools import *
-from hamcrest import *
-from nose.plugins.skip import SkipTest
+import pytest
+skip = pytest.mark.skipif
 
 
-class TextMunger_Test:
-    @istest
-    def leaves_short_words_unchanged(self):
-        assert_that(munge('abc'), equal_to('abc'))
+def test_leaves_short_words_unchanged():
+    assert munge('abc') == 'abc'
 
-    @istest
-    def reverses_middle_in_longer_words(self):
-        assert_that(munge('abcd'), equal_to('acbd'))
+def test_reverses_middle_in_longer_words():
+    assert munge('abcd') == 'acbd'
 
-    @istest
-    def munges_sentence_word_by_word(self):
-        assert_that(munge('abc abc'), equal_to('abc abc'))
+def test_munges_sentence_word_by_word():
+    assert munge('abc abc') == 'abc abc'
 
-    @istest
-    def ignores_punctuation(self):
-        raise SkipTest
-        assert_that(munge('abc abc!'), equal_to('abc abc!'))
+@skip
+def test_ignores_punctuation():
+    assert munge('abc abc!') == 'abc abc!'
 
 
 def munge(text):
