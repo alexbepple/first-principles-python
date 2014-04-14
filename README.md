@@ -16,19 +16,8 @@ Install dependencies.
 
 Now you should have a green bar.
 
-    make test.once
+    py.test
 
+Run tests continuously.
 
-# Run tests continuously
-
-Install dependencies
-
-    bundle install
-
-If you are not on OS X, you are better off with
-
-    bundle install --without osx
-
-Now the tests will automatically rerun when you change files.
-
-    make test.continuously
+    make tdd
