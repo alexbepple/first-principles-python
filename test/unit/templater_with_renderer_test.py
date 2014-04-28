@@ -1,6 +1,5 @@
 from mock import Mock
 from mock import sentinel as s
-from hamcrest import *
 
 # integration usage:
 #
@@ -18,7 +17,6 @@ def test_uses_the_renderer_for_rendering():
 
     assert templater.render('name', 'actual_values') == s.rendered
     renderer_stub.render.assert_any_call('contents', 'actual_values')
-
 
 
 class Templater:
