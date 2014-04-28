@@ -1,2 +1,3 @@
 tdd:
-	watchmedo shell-command --patterns='*.py' --recursive --command='clear;py.test'
+	clear
+	watchmedo shell-command --patterns='*.py' --recursive --command='clear;flake8 . && py.test'
