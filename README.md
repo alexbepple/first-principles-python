@@ -21,3 +21,8 @@ Now you should have a green bar.
 Run tests continuously.
 
     make tdd
+
+
+# Contributors
+
+When changing things on _master_, do not forget to merge them onto other branches.
